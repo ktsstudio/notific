@@ -1,0 +1,27 @@
+{
+  "name": "notify-amd",
+  "version": "1.0.0",
+  "authors": [
+    "George Biryukov <george@biryukov.ws>"
+  ],
+  "description": "Extremely simple amd module for notifications",
+  "main": "src/notify.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "notify",
+    "amd",
+    "notification",
+    "jquery"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gbiryukov/notify-amd",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
