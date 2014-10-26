@@ -1,6 +1,6 @@
 /*! 
-* notify - v1.0.0 - 2014-10-24
-* https://github.com/gbiryukov/notify-amd
+* notific - v0.1.0 - 2014-10-26
+* https://github.com/gbiryukov/notific
 * Copyright (c) 2014 George Biryukov
 * Licensed MIT 
 */

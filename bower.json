@@ -1,6 +1,6 @@
 {
-  "name": "notify-amd",
-  "version": "1.0.0",
+  "name": "notific",
+  "version": "0.1.0",
   "authors": [
     "George Biryukov <george@biryukov.ws>"
   ],
@@ -16,7 +16,7 @@
     "jquery"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/gbiryukov/notify-amd",
+  "homepage": "https://github.com/gbiryukov/notific",
   "ignore": [
     "**/.*",
     "node_modules",

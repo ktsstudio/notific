@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
-        modulename: 'notify',
+        modulename: 'notific',
         banner: '/*! \n* <%= modulename %> - v<%= pkg.version %> - ' +
             '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
             '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 stripBanners: true
             },
             js: {
-                src: ['src/<%= modulename %>.js'],
+                src: ['src/*.js'],
                 dest: 'dist/<%= modulename %>.js'
             },
             css: {

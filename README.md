@@ -1,3 +1,3 @@
-notify-amd
+Notific
 ==========
 Extremely simple amd module for notifications

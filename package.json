@@ -1,6 +1,6 @@
 {
-  "name": "notify-amd",
-  "version": "1.0.0",
+  "name": "notific",
+  "version": "0.1.0",
   "description": "Extremely simple amd module for notifications",
   "keywords": [
     "notify",
@@ -8,8 +8,8 @@
     "notification",
     "jquery"
   ],
-  "homepage": "https://github.com/gbiryukov/notify-amd",
-  "bugs": "https://github.com/gbiryukov/notify-amd/issues",
+  "homepage": "https://github.com/gbiryukov/notific",
+  "bugs": "https://github.com/gbiryukov/notific/issues",
   "author": {
     "name": "George Biryukov",
     "email": "george@biryukov.ws",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gbiryukov/notify-amd.git"
+    "url": "https://github.com/gbiryukov/notific.git"
   },
   "licenses": [
     {
