@@ -50,7 +50,7 @@ define(['jquery'], function ($) {
                 $notification.addClass('notify__alert_with-shadow');
             }
         },
-        that: function (opts) {
+        show: function (opts) {
             var $container = $('.' + this._params.container);
             if ($container.length === 0) {
                 $container = this._init();
@@ -93,15 +93,15 @@ define(['jquery'], function ($) {
         },
 
         error: function (opts) {
-            return this.that($.extend(opts, {type: 'error'}));
+            return this.show($.extend(opts, {type: 'error'}));
         },
 
         success: function (opts) {
-            return this.that($.extend(opts, {type: 'success'}));
+            return this.show($.extend(opts, {type: 'success'}));
         },
 
         warning: function (opts) {
-            return this.that($.extend(opts, {type: 'warning'}));
+            return this.show($.extend(opts, {type: 'warning'}));
         },
 
         close: function ($notification) {
