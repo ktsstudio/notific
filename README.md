@@ -22,7 +22,7 @@ require(['notific'], function(Notific){
         type: 'default',
 
         // время автозакрытия уведомления. false для отмены автозакрытия
-        // по умолчанию 5000
+        // по умолчанию false
         timeout: 5000,
 
         // может принимать значения 'top', 'bottom'

@@ -7,6 +7,9 @@ require.config({
 
 require(['jquery', 'notific'], function($, Notific){
     $(document).ready(function($){
+
+        //Notific.config({bootstrap:true});
+
         $('.btn-primary').click(function(){
             Notific.show({
                 title: 'Привет',

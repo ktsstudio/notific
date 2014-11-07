@@ -13,38 +13,59 @@ define(['jquery'], function ($) {
             title: 'Notification',
             text: '',
             type: 'default',
-            timeout: false,
-            position: 'bottom'
+            timeout: false
         },
         _params: {
-            body: 'body',
-            container: 'notific',
-            notification: 'notific__alert',
-            title: 'notific__title',
-            text: 'notific__text',
-            close: 'notific__close'
+            css: {
+                body:           'body',
+                container:      'notific',
+                topPosition:    'notific_top',
+                bottomPosition: 'notific_bottom',
+
+                notification:   'notific__alert',
+                default:        'notific__alert_info',
+                error:          'notific__alert_danger',
+                success:        'notific__alert_success',
+                warning:        'notific__alert_warning',
+
+                title:          'notific__title',
+                text:           'notific__text',
+                close:          'notific__close'
+            },
+            width: 360,
+            position: 'bottom',
+            bootstrap: false
         },
         _types: {
-            default: 'notific__alert_info',
-            error: 'notific__alert_danger',
-            success: 'notific__alert_success',
-            warning: 'notific__alert_warning'
+            default: true,
+            error: true,
+            success: true,
+            warning: true
         },
         _init: function () {
+            if (this._params.bootstrap) {
+                this._styleBootstrap();
+            }
+
             var self = this,
-                $container = $('<div>', {'class': this._params.container });
+                positionClass = this._params.css[this._params.position],
+                $container = $('<div>', {'class': this._params.css.container });
 
-            $(this._params.body).append($container);
+            $container
+                .addClass(positionClass)
+                .css('width', this._params.width);
 
-            $container.on('click', '.' + this._params.close, function () {
-                var $notification = $(this).closest('.' + self._params.notification);
+            $(this._params.css.body).append($container);
+
+            $container.on('click', '.' + this._params.css.close, function () {
+                var $notification = $(this).closest('.' + self._params.css.notification);
                 self.close($notification);
             });
 
             return $container;
         },
         _verifyNotificationType: function (type) {
-            if (typeof(this._types[type]) === 'undefined') {
+            if (!this._types.hasOwnProperty(type)) {
                 return 'default';
             } else {
                 return type;
@@ -53,15 +74,23 @@ define(['jquery'], function ($) {
         _scrollToBottom: function ($container) {
             $container.stop().animate({ scrollTop: $container.prop('scrollHeight')}, 300);
         },
-        /*
-        _styleBootstrap: function ($notification) {
-            if ($notification.css('border-width') === '0px') {
-                $notification.addClass('notific__alert_with-shadow');
-            }
+        _styleBootstrap: function () {
+            this.config({
+                css: {
+                    notification: 'alert',
+                    default:      'alert-info',
+                    error:        'alert-danger',
+                    success:      'alert-success',
+                    warning:      'alert-warning',
+                    close:        'close'
+                }
+            });
         },
-         */
+        config: function(params){
+            $.extend(true, this._params, params);
+        },
         show: function (opts) {
-            var $container = $('.' + this._params.container);
+            var $container = $('.' + this._params.css.container);
             if ($container.length === 0) {
                 $container = this._init();
             }
@@ -72,24 +101,23 @@ define(['jquery'], function ($) {
             options.type = this._verifyNotificationType(options.type);
 
             var $notification = $(
-                '<div class="' + this._params.notification + ' ' + this._types[options.type] + '">' +
-                    '<button type="button" class="' + this._params.close + '">&times;</button>' +
-                    '<h4 class="' + this._params.title + '">' + options.title + '</h4>' +
-                    '<p class="' + this._params.text + '">' + options.text + '</p>' +
+                '<div class="' + this._params.css.notification + ' ' + this._params.css[options.type] + '">' +
+                    '<button type="button" class="' + this._params.css.close + '">&times;</button>' +
+                    '<h4 class="' + this._params.css.title + '">' + options.title + '</h4>' +
+                    '<p class="' + this._params.css.text + '">' + options.text + '</p>' +
                 '</div>'
             );
 
             $container.append($notification);
-            //this._styleBootstrap($notification);
             this._scrollToBottom($container);
 
             //todo плохо, отрефакторить, ибо изначально в архитектуре этого нет
             if (options.position === 'top') {
-                $container.removeClass('notific_bottom');
-                $container.addClass('notific_top');
+                $container.removeClass(this._params.css.bottomPosition);
+                $container.addClass(this._params.css.topPosition);
             } else {
-                $container.removeClass('notific_top');
-                $container.addClass('notific_bottom');
+                $container.removeClass(this._params.css.topPosition);
+                $container.addClass(this._params.css.bottomPosition);
             }
 
             if (options.timeout) {
