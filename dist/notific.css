@@ -1,11 +1,11 @@
 /*! 
-* notific - v0.1.0 - 2014-10-26
+* notific - v0.1.0 - 2014-11-07
 * https://github.com/gbiryukov/notific
 * Copyright (c) 2014 George Biryukov
 * Licensed MIT 
 */
 
-.notify {
+.notific {
     position: fixed;
     z-index: 1000;
     right: 0;
@@ -20,15 +20,15 @@
     padding: 20px 20px 0 20px;
 }
 
-.notify_top {
+.notific_top {
     top: 0;
 }
 
-.notify_bottom {
+.notific_bottom {
     bottom: 0;
 }
 
-.notify__alert {
+.notific__alert {
     position: relative;
 
     width: 320px;
@@ -39,43 +39,41 @@
     background: #fff;
 
     color: #444;
-}
 
-.notify__alert_with-shadow {
     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
-.notify__alert_danger {
+.notific__alert_danger {
     background: #f2dede;
 
     color: #a94442;
 }
 
-.notify__alert_success {
+.notific__alert_success {
     background: #dff0d8;
 
     color: #3c763d;
 }
 
-.notify__alert_warning {
+.notific__alert_warning {
     background: #fcf8e3;
 
     color: #8a6d3b;
 }
 
-.notify__title {
+.notific__title {
     font-size: 16px;
     font-weight: bold;
     line-height: 24px;
 }
 
-.notify__text {
+.notific__text {
     font-size: 14px;
     line-height: 18px;
 }
 
-.notify__close {
+.notific__close {
     position: absolute;
     top: 3px;
     right: 8px;
@@ -95,6 +93,6 @@
     outline: none;
 }
 
-.notify__close:hover {
+.notific__close:hover {
     opacity: 0.5;
 }
