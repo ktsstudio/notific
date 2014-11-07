@@ -8,7 +8,7 @@ require.config({
 require(['jquery', 'notific'], function($, Notific){
     $(document).ready(function($){
 
-        Notific.config({bootstrap:true});
+        //Notific.config({bootstrap:true});
 
         $('.btn-primary').click(function(){
             Notific.show({
@@ -19,22 +19,22 @@ require(['jquery', 'notific'], function($, Notific){
 
         $('.btn-danger').click(function(){
             Notific.error({
-                title: 'Привет',
-                text: 'Это стандартное уведомление'
+                title: 'Алло!',
+                text: 'Ошибочка вышла'
             });
         });
 
         $('.btn-success').click(function(){
             Notific.success({
-                title: 'Привет',
-                text: 'Это стандартное уведомление'
+                title: 'Та-да!',
+                text: 'Полный успех'
             });
         });
 
         $('.btn-warning').click(function(){
             Notific.warning({
-                title: 'Привет',
-                text: 'Это стандартное уведомление'
+                title: 'Аларм',
+                text: 'Что-то не так'
             });
         });
     });
