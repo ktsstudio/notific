@@ -1,5 +1,5 @@
 /*! 
-* notific - v0.1.0 - 2014-11-07
+* notific - v0.1.1 - 2014-11-07
 * https://github.com/gbiryukov/notific
 * Copyright (c) 2014 George Biryukov
 * Licensed MIT 
@@ -66,11 +66,13 @@
     font-size: 16px;
     font-weight: bold;
     line-height: 24px;
+    margin-top: 0;
 }
 
 .notific__text {
     font-size: 14px;
     line-height: 18px;
+    margin-bottom: 0;
 }
 
 .notific__close {

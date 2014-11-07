@@ -1,5 +1,5 @@
 /*! 
-* notific - v0.1.0 - 2014-11-07
+* notific - v0.1.1 - 2014-11-07
 * https://github.com/gbiryukov/notific
 * Copyright (c) 2014 George Biryukov
 * Licensed MIT 
@@ -19,8 +19,8 @@ define(['jquery'], function ($) {
             css: {
                 body:           'body',
                 container:      'notific',
-                topPosition:    'notific_top',
-                bottomPosition: 'notific_bottom',
+                top:            'notific_top',
+                bottom:         'notific_bottom',
 
                 notification:   'notific__alert',
                 default:        'notific__alert_info',
@@ -92,6 +92,12 @@ define(['jquery'], function ($) {
         show: function (opts) {
             var $container = $('.' + this._params.css.container);
             if ($container.length === 0) {
+
+                //Для обратной совместимости с версией 0.1.0
+                if (opts.hasOwnProperty('position')) {
+                    this._params.position = opts.position;
+                }
+
                 $container = this._init();
             }
 
@@ -110,15 +116,6 @@ define(['jquery'], function ($) {
 
             $container.append($notification);
             this._scrollToBottom($container);
-
-            //todo плохо, отрефакторить, ибо изначально в архитектуре этого нет
-            if (options.position === 'top') {
-                $container.removeClass(this._params.css.bottomPosition);
-                $container.addClass(this._params.css.topPosition);
-            } else {
-                $container.removeClass(this._params.css.topPosition);
-                $container.addClass(this._params.css.bottomPosition);
-            }
 
             if (options.timeout) {
                 var self = this;
