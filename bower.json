@@ -5,12 +5,15 @@
     "George Biryukov <george@biryukov.ws>"
   ],
   "description": "Extremely simple amd module for notifications",
-  "main": "src/notify.js",
+  "main": [
+    "dist/notific.js",
+    "dist/notific.css"
+  ],
   "moduleType": [
     "amd"
   ],
   "keywords": [
-    "notify",
+    "notific",
     "amd",
     "notification",
     "jquery"
