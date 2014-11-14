@@ -1,5 +1,5 @@
 /*! 
-* notific - v0.1.1 - 2014-11-07
+* notific - v0.1.1 - 2014-11-14
 * https://github.com/gbiryukov/notific
 * Copyright (c) 2014 George Biryukov
 * Licensed MIT 
