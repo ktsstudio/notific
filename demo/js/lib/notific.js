@@ -1,3 +1,10 @@
+/*! 
+* notific - v0.1.1 - 2015-07-30
+* https://github.com/gbiryukov/notific
+* Copyright (c) 2015 George Biryukov
+* Licensed MIT 
+*/
+
 define(['jquery'], function ($) {
     'use strict';
 
@@ -6,7 +13,7 @@ define(['jquery'], function ($) {
             title: 'Notification',
             text: '',
             type: 'default',
-            timeout: false
+            timeout: 5000
         },
         _params: {
             css: {

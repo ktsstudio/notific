@@ -6,7 +6,7 @@ define(['jquery'], function ($) {
             title: 'Notification',
             text: '',
             type: 'default',
-            timeout: false
+            timeout: 5000
         },
         _params: {
             css: {

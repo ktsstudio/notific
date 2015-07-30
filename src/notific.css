@@ -1,9 +1,9 @@
 .notific {
     position: fixed;
-    z-index: 1040;
+    z-index: 2040;
     right: 0;
 
-    overflow-y: scroll;
+    overflow-y: auto;
 
     max-height: 100%;
     -webkit-box-sizing: border-box;
