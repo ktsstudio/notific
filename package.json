@@ -8,6 +8,7 @@
     "notification",
     "jquery"
   ],
+  "main": "dist/notific.js",
   "homepage": "https://github.com/gbiryukov/notific",
   "bugs": "https://github.com/gbiryukov/notific/issues",
   "author": {
